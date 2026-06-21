@@ -44,5 +44,4 @@ public class Combination_Sum
       List<List<Integer>> result = answer.combinationSum(candidates, target);
       System.out.println(result);
    }
-
 }
