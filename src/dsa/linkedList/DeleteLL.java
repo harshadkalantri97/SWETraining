@@ -51,7 +51,7 @@ public class DeleteLL
       return head;
    }
 
-   // Removing kth element from LinkedList
+   // Removing kth node from LinkedList
    public static ListNode1 removeK(ListNode1 head, int k)
    {
       if (head == null || k <= 0)
@@ -73,6 +73,29 @@ public class DeleteLL
          temp = temp.next;
       }
       System.out.println("The kth value is more than the length of the LinkedList.");
+      return head;
+   }
+
+   // Removing kth element value from LinkedList
+   public static ListNode1 removeKthElement(ListNode1 head, int elementK)
+   {
+      if (head == null)
+         return head;
+      if (head.data == elementK)
+         return head.next;
+      ListNode1 temp = head;
+      ListNode1 prev = null;
+      while (temp != null)
+      {
+         if (temp.data == elementK)
+         {
+            prev.next = temp.next;
+            return head;
+         }
+         prev = temp;
+         temp = temp.next;
+      }
+      System.out.println("The kth element value is not in the LinkedList.");
       return head;
    }
 
@@ -110,6 +133,7 @@ public class DeleteLL
       ListNode1 newNode = arrayToLinkedList(arr);
       ListNode1 newTailNode = arrayToLinkedList(arr);
       ListNode1 kthNode = arrayToLinkedList(arr);
+      ListNode1 kthElementVal = arrayToLinkedList(arr);
       System.out.println("Original List:");
       printLinkedList(newNode);
       System.out.println("Delete head node list:");
@@ -123,7 +147,9 @@ public class DeleteLL
       kthNode = removeK(kthNode, sc.nextInt());
       System.out.println("kthNodeRemoval:");
       printLinkedList(kthNode);
+      System.out.println("kthElementRemoval:");
+      kthElementVal = removeKthElement(kthElementVal, sc.nextInt());
+      printLinkedList(kthElementVal);
       sc.close();
    }
-
 }
