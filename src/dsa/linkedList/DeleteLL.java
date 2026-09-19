@@ -2,6 +2,8 @@ package dsa.linkedList;
 
 import java.util.Scanner;
 
+//Updating from my github account
+
 class ListNode1
 {
    int data;
